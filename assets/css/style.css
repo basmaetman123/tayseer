@@ -1,0 +1,398 @@
+/*=================== main colors ==========================*/
+:root {
+    --accent_main: #FBB827;
+    --accent_dark: #F0AA32;
+    --gray_main: #5F605F;
+    --gary_light: #7E807E;
+}
+
+/*====================== import fonts ======================*/
+@font-face {
+    font-family: regular_font;
+    src: url(../fonts/Cairo-Regular.ttf);
+}
+
+@font-face {
+    font-family: medium_font;
+    src: url(../fonts/Cairo-Medium.ttf);
+}
+
+@font-face {
+    font-family: semiBold_font;
+    src: url(../fonts/Cairo-SemiBold.ttf);
+}
+
+
+
+/*======================= global styles =====================*/
+html {
+    overflow-x: hidden;
+}
+body {
+    font-family: regular_font;
+    overflow-x: hidden;
+    direction: rtl;
+}
+ul {
+    margin-bottom: 0;
+    padding: 0;
+}
+p {
+    color: var(--gray_main);
+    font-size: 20px;
+    font-weight: 400;
+}
+h2.title {
+    color: #000000;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+p.desc {
+    color: var(--gary_light);
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+}
+div.card {
+    border: none;
+}
+.btn:focus {
+    box-shadow: none;
+}
+.section_container {
+    padding: 0 128px;
+}
+
+@media (max-width: 1200px) {
+    .section_container {
+        padding: 0 16px;
+    }
+}
+
+/* start nav */
+nav {
+    margin-top: 50px;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-right: 104px;
+}
+nav ul li a.link {
+    margin-left: 45px;
+    color: var(--gary_light);
+    font-weight: 400;
+    position: relative;
+    transition: all .3s ease;
+}
+nav ul li a.link:hover {
+    color: var(--accent_dark);
+}
+nav ul li a.link::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 30%;
+    background-color: var(--accent_dark);
+    height: 1px;
+    transition: all .3s ease;
+    width: 0;
+}
+nav ul li a.link:hover::after {
+    width: 40%;
+}
+nav ul li a.link.active {
+    color: var(--accent_dark);
+}
+nav ul li a.link.active::after {
+    width: 40%;
+}
+nav a.login-btn {
+    margin-right: 29px;
+    height: 50px;
+    width: 144px;
+    border: 1px solid var(--accent_dark);
+    color: var(--accent_dark);
+    border-radius: 100px;
+    line-height: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all .3s ease;
+}
+nav a.login-btn:hover {
+    background-color: var(--accent_dark);
+    color: #ffffff;
+}
+nav button.toggle-btn {
+    color: var(--accent_dark) !important;
+    font-size: 30px;
+    display: none;
+}
+@media (max-width : 1465px) {
+    nav {
+        display: block !important ;
+    }
+    nav a.logo-link {
+        display: block;
+        text-align: center;
+    }
+    nav ul {
+        margin: 15px auto;
+        width: 100%;
+        justify-content: center;
+    }
+    nav a.login-btn {
+        margin: auto;
+        width: 50%;
+        display: block;
+    }
+}
+@media (max-width : 992px) {
+    nav {
+        display: flex !important ;
+    }
+    nav a.logo-link {
+        display: inline;
+    }
+    nav ul {
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        margin: auto;
+        z-index: 1000;
+        background: var(--accent_main);
+        width: 75%;
+        height: 100%;
+        justify-content: center;
+        transform: translateX(-102%);
+    }
+    nav button.toggle-btn {
+        display: inline;
+    }
+}
+/* end nav */
+/* start header */
+header.header {
+    margin-top: 63px;
+    position: relative;
+}
+header.header h1 {
+    font-weight: 800;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+header.header h1 span {
+    color: var(--accent_dark);
+}
+header.header p{
+    margin-bottom: 57px;
+    width: 485px;
+}
+header.header a.btn {
+    width: 320px;
+    height: 60px;
+    border-radius: 8px;
+    background-color: var(--accent_main);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 40px;
+    transition: all .3s ease;
+}
+header.header a.btn:hover {
+    color: var(--accent_main);
+    background: #ffffff;
+    box-shadow: 0 0 12px rgba(0,0,0,.1);
+}
+header.header img.vector {
+    position: absolute;
+    left: 0;
+    top: -35px;
+}
+@media (max-width: 720px) {
+    header.header h1 {
+        font-size: 20px;
+    }
+    header.header p{
+        width: 100%;
+    }
+    header.header a.btn {
+        margin-bottom: 20px;
+    }
+}
+/* end header */
+/* start finance choice */
+section.finance-choice {
+    margin-top: 215px;
+    padding-top: 30px;
+    background-color: #FFF5E0;
+}
+section.finance-choice div.card {
+    background-color: #F7FAF7;
+    border-radius: 4px;
+    padding: 53px 48px;
+    margin-bottom: 42px;
+}
+section.finance-choice div.card img {
+    object-fit: scale-down;
+    margin-bottom: 50px;
+    max-height: 152px;
+}
+section.finance-choice div.card h4 {
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 26px;
+}
+section.finance-choice div.card p {
+    color: var(--gary_light);
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+section.finance-choice div.card a.btn {
+    color: #402F0A;
+    font-weight: 700;
+    font-size: 18px;
+    background-color: var(--accent_main);
+    border-radius: 8px;
+    width: 190px;
+    height: 48px;
+    line-height: 30px;
+    margin: auto;
+    transition: all .3s ease;
+}
+section.finance-choice div.card a.btn:hover {
+    color: var(--accent_main);
+    background-color: #ffffff;
+    box-shadow: 0 0 12px rgba(0,0,0,.1);
+}
+/* end finance choice */
+/* start features */
+section.features {
+    margin-top: 202px;
+}
+section.features h2.title {
+    font-size: 28px;
+}
+section.features div.list {
+    position: relative;
+    margin-bottom: 32px;
+    margin-right: 11px;
+}
+section.features div.list::after {
+    content: '';
+    position: absolute;
+    right: -17px;
+    top: 9px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--accent_main);
+}
+section.features div.list h3 {
+    color: #000000;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 19px;
+}
+section.features div.list p {
+    font-size: 16px;
+    width: 460px;
+}
+section.features a.btn {
+    width: 217px;
+    height: 60px;
+    color: #402F0A;
+    background-color: var(--accent_main);
+    border-radius: 8px;
+    font-weight: 600;
+    line-height: 50px;
+    font-size: 20px;
+    margin-top: 10px;
+    transition: all .3s ease;
+}
+section.features a.btn:hover {
+    color: var(--accent_main);
+    background-color: #ffffff;
+    box-shadow: 0 0 12px rgba(0,0,0,.1);
+}
+@media (max-width: 720px) {
+    section.features div.list p {
+        width: 100%;
+    }
+    section.features a.btn {
+        margin-bottom: 20px;
+    }
+}
+/* end features */
+/* start conditions */
+section.conditions {
+    margin-top: 202px;
+}
+section.conditions h2.title {
+    font-size: 28px;
+}
+section.conditions div.card div.condition-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 47px;
+}
+section.conditions div.card div.condition-title img {
+    margin-left: 10px;
+    object-fit: scale-down;
+}
+section.conditions div.card div.condition-title h4{
+    color: #FFD780; 
+    font-weight: 700;
+    font-size: 22px;
+}
+section.conditions div.card p {
+    font-size: 22px;
+    font-weight: 700;
+    width: 200px;
+}
+@media (max-width: 1200px) {
+    section.conditions div.card div.condition-title {
+        margin-bottom: 20px;
+    }
+    section.conditions div.card p {
+        margin-bottom: 40px;
+    }
+}
+/* end conditions */
+/* start dashboard */
+section.dashboard {
+    margin-top: 215px;
+    padding-top: 30px;
+    background-color: #FFF5E0;
+}
+section.dashboard h2 {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+section.dashboard ul {
+    list-style: none;
+}
+section.dashboard ul li {
+    position: relative;
+    margin-bottom: 11px;
+    margin-right: 24px;
+}
+section.dashboard ul li::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--accent_dark);
+}
+/* end dashboard */
